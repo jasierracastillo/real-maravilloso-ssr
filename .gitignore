@@ -6,6 +6,9 @@
 /out-tsc
 /bazel-out
 
+#Good Sync files
+/_gsdata_
+
 # Node
 /node_modules
 npm-debug.log

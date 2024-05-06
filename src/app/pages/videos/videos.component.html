@@ -19,17 +19,21 @@
       <!-- ##### Tabs ##### -->
       <div class="col">
         <div class="oneMusic-tabs-content justify-content-center">
-          <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <ul
+            class="nav nav-tabs justify-content-center"
+            id="myTab"
+            role="tablist"
+          >
             <li class="nav-item">
               <a
-                class="nav-link"
+                class="nav-link active"
                 id="tab--1"
                 data-toggle="tab"
                 href="#tab1"
                 role="tab"
                 aria-controls="tab1"
                 aria-selected="true"
-                >Mauris gravida neque</a
+                >In Studio</a
               >
             </li>
             <li class="nav-item">
@@ -41,26 +45,26 @@
                 role="tab"
                 aria-controls="tab2"
                 aria-selected="false"
-                >Pellentesque sit</a
+                >En Concierto</a
               >
             </li>
             <li class="nav-item">
               <a
-                class="nav-link active"
+                class="nav-link"
                 id="tab--3"
                 data-toggle="tab"
                 href="#tab3"
                 role="tab"
                 aria-controls="tab3"
                 aria-selected="false"
-                >Quisque fringilla</a
+                >Otros Videos</a
               >
             </li>
           </ul>
 
           <div class="tab-content mb-100" id="myTabContent">
             <div
-              class="tab-pane fade"
+              class="tab-pane fade show active"
               id="tab1"
               role="tabpanel"
               aria-labelledby="tab--1"
@@ -72,31 +76,13 @@
                     <!-- Single Video Area -->
                     @for (item of videoCards; track $index) {
                     <div class="col-12 col-md-6 col-lg-4">
-                      <div
-                        class="single-event-area mb-30 wow fadeInUp"
-                        data-wow-delay="300ms"
-                      >
-                        <div class="event-thumbnail">
-                          <img [src]="item.image" alt="" />
-                        </div>
-                        <div class="event-text">
-                          <h4>{{ item.title }}</h4>
-                          <div class="event-meta-data">
-                            <a [href]="item.link" class="event-place">{{
-                              item.descrption
-                            }}</a>
-                            <a [href]="item.link" class="event-date"
-                              >In Studio</a
-                            >
-                          </div>
-                          <a
-                            [href]="item.link"
-                            class="btn see-more-btn video--play--btn"
-                            ><i class="fa fa-play"></i> PLAY</a
-                          >
-                        </div>
-                      </div>
+                      <!-- CHILD COMPONENT  --  VIDEO CARDS -->
+
+                      <app-video-card [card_item]="item"></app-video-card>
+
+                      <!-- ################################ -->
                     </div>
+
                     }
                   </div>
                 </div>
@@ -122,7 +108,7 @@
               </div>
             </div>
             <div
-              class="tab-pane fade show active"
+              class="tab-pane fade"
               id="tab3"
               role="tabpanel"
               aria-labelledby="tab--3"

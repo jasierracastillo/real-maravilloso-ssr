@@ -5,8 +5,8 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './gallery.component.html',
-  styleUrl: './gallery.component.css'
+  styleUrl: './gallery.component.css',
 })
 export class GalleryComponent {
-
+  img_src: string = '../../../assets/img/front.jpg';
 }
